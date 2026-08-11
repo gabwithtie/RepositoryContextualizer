@@ -1,0 +1,67 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>552c57c2-bfc8-4957-9a15-15818330594a</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>RepositoryContextualizer.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>RepositoryContextualizer</Name>
+    <RootNamespace>RepositoryContextualizer</RootNamespace>
+    <InterpreterId>MSBuild|repocontextualizer|$(MSBuildProjectFullPath)</InterpreterId>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>
+    </CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app_gui\window.py" />
+    <Compile Include="app_gui\__init__.py" />
+    <Compile Include="modules\config.py" />
+    <Compile Include="modules\indexer.py" />
+    <Compile Include="modules\packer.py" />
+    <Compile Include="modules\scanner.py" />
+    <Compile Include="RepositoryContextualizer.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app_gui\" />
+    <Folder Include="modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="repocontextualizer\">
+      <Id>repocontextualizer</Id>
+      <Version>3.11</Version>
+      <Description>repocontextualizer (Python 3.11)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build_debug.bat" />
+    <Content Include="build.bat" />
+    <Content Include="splash.png" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
